@@ -13,6 +13,7 @@ const ToDoRoutes= require('./routes/toDo');
 const ColorsRoutes= require('./routes/color');
 const CalendarRoutes= require('./routes/calendar');
 const JobTaskRoutes= require('./routes/jobTask');
+const EventRoutes= require('./routes/event');
 
 const app = express();
 
@@ -32,5 +33,6 @@ app.use(ToDoRoutes);
 app.use(ColorsRoutes);
 app.use(CalendarRoutes);
 app.use(JobTaskRoutes);
+app.use(EventRoutes);
 
 app.listen(3000);

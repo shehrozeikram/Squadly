@@ -2,6 +2,8 @@ const User = require('../models/user');
 const jwt= require('jsonwebtoken');
 const uuid= require('uuid/v4');
 const bcrypt= require('bcryptjs');
+const Calendar= require('../models/calendar');
+const ToDoList= require('../models/toDoList');
 
 exports.signup= async (req, res)=> {
     var now = new Date();
@@ -35,9 +37,39 @@ exports.signup= async (req, res)=> {
                 function(err, hashPassword) {
                     console.log("passs", hashPassword);
 
-                    const user = new User(id, name, email, password, lastLogin, createdFrom, phoneNumber, createdAt, salt);
+                    const user = new User(id, name, email, hashPassword, lastLogin, createdFrom, phoneNumber, createdAt, salt);
                     user.createUser().then(result=>{
                         console.log("success:", result);
+
+                        var calendarId = uuid();
+                        var calendarName = "Personal";
+                        var accountId = id;
+                        var colorId = "#EC547A";
+                        var calendarCreatedAt = dateTime;
+                        const calendar = new Calendar(calendarId, calendarName, accountId,
+                            colorId, calendarCreatedAt);
+                        calendar.createCalendar().then(result=> {
+                            console.log("Calendar created on signup");
+                        })
+                        .catch(err=> {
+
+                            console.log("Error on calendar creation during signup", err);
+                        })
+
+                        var toDoListId = uuid();
+                        var toDoListName = "Personal";
+                        var toDoListAccountId = id
+                        var toDoListCreatedAt = dateTime;
+                        const toDoList = new ToDoList(toDoListId, toDoListName,
+                            toDoListAccountId, toDoListCreatedAt);
+                        toDoList.createToDoList().then(result=> {
+                            console.log("ToDoList created on signup");
+                        })
+                        .catch(err=> {
+
+                            console.log("Error on ToDoList creation during signup", err);
+                        })
+
                         const token = jwt.sign(
                             {
                                 email: email
@@ -47,7 +79,8 @@ exports.signup= async (req, res)=> {
                         );
                         res.json({
                             status: "success",
-                            token: token
+                            token: token,
+                            userId: id
                         })
                     })
                     .catch(err=>{
