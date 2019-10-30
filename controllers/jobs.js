@@ -7,7 +7,7 @@ exports.createJob= (req, res, next)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id= uuid();
+    const id= req.body.id;
     const squadId= req.body.squadId;
     const accountId= req.body.accountId;
     const description= req.body.description;

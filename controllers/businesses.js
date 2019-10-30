@@ -3,7 +3,7 @@ const uuid= require('uuid/v4');
 
 exports.createNewBusiness = (req, res, next)=> {
     console.log("test");
-    const id = uuid();
+    const id = req.body.id;
     const name = req.body.name;
     const contact = req.body.contact;
     const image= req.files.image;

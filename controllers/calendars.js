@@ -7,7 +7,7 @@ exports.createNewCalendar= (req, res, next)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id = uuid();
+    const id = req.body.id;
     const name = req.body.name;
     const accountId = req.body.accountId;
     const colorId = req.body.colorId;
