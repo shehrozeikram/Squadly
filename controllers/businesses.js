@@ -6,13 +6,30 @@ exports.createNewBusiness = (req, res, next)=> {
     const id = uuid();
     const name = req.body.name;
     const contact = req.body.contact;
-    const image= null;
+    const image= req.files.image;
     const accountId= req.body.accountId;
     const service= req.body.service;
     const available = 1;
+    const createdFrom = req.body.createdFrom;
 
-    if(id, name, contact, accountId, service, available) {
-        const business = new Business(id, contact, name, image, available, accountId, service);
+    if(id, name, contact, accountId, service, available,
+        image, createdFrom) {
+
+        if(image) {
+            image.mv("./assets/businesses/"+"BI-"+id+".jpg", function(err) {
+                if(err) {
+                    console.log("Error while uploading image.");
+                }
+                else {
+                    console.log("Image Uploaded");
+                }
+            });
+        }
+        
+        let imageName = "BI-" + id;
+        
+        const business = new Business(id, contact, name, imageName, 
+            available, accountId, service, createdFrom);
         business.createBusiness().then(result=>{
             console.log("businessSuccess:", result);
             res.json({
@@ -39,11 +56,24 @@ exports.updateBusiness= (req, res, next)=> {
     const id = req.body.id;
     const name = req.body.name;
     const contact = req.body.contact;
-    const image= null;
+    const image= req.files.image;
     const service= req.body.service;
 
     if(id, name, contact, image, service) {
-        Business.updateCurrentBusiness(id, contact, name, image, service)
+        if(image) {
+            image.mv("./assets/businesses/"+"BI-"+id+".jpg", function(err) {
+                if(err) {
+                    console.log("Error while uploading image.");
+                }
+                else {
+                    console.log("Image Uploaded");
+                }
+            });
+        }
+        
+        let imageName = "BI-" + id;
+
+        Business.updateCurrentBusiness(id, contact, name, imageName, service)
         .then(result=> {
             console.log("businessUpdateSuccess:", result);
             res.json({

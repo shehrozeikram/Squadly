@@ -1,7 +1,8 @@
 const database= require('../utils/database');
 
 module.exports= class business {
-    constructor(id, contact, name, image, available, accountId, service) {
+    constructor(id, contact, name, image, available, accountId, service,
+        createdFrom) {
         this.id = id;
         this.contact= contact;
         this.name= name;
@@ -9,13 +10,14 @@ module.exports= class business {
         this.accountId= accountId;
         this.available= available;
         this.service= service;
+        this.createdFrom= createdFrom;
     }
 
     createBusiness() {
         return database.execute(`CALL CREATE_BUSINESS("${this.id}", 
         "${this.name}", "${this.contact}", "${this.image}",
         "${this.available}", "${this.accountId}",
-        "${this.service}" )`);
+        "${this.service}", "${this.createdFrom}" )`);
     }
 
     static updateCurrentBusiness(id, contact, name, image, service) {

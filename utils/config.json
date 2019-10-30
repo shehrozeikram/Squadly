@@ -1,0 +1,10 @@
+{
+    "JWTSECRET": "secretcode",
+    "DB_CONFIG": {
+        "host": "localhost",
+        "user": "root",
+        "database": "squadly",
+        "password": "Welcome.123!",
+        "multipleStatements": true
+    }
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const colorController= require('../controllers/color');
+const colorController= require('../controllers/colors');
 
 const router = express.Router();
 

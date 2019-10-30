@@ -9,13 +9,13 @@ module.exports= class calendar {
        this.createdAt = createdAt;
    }
    createCalendar() {
-       return database.execute(`CALL calendar("${this.id}",
+       return database.execute(`CALL CREATE_CALENDAR("${this.id}",
        "${this.name}", "${this.accountId}", "${this.colorId}", 
        "${this.createdAt}" )`);
    }
    
    static updateCalendar(id, name, colorId) {
-    return database.execute(`CALL updateCalendar("${id}",
+    return database.execute(`CALL UPDATE_CALENDAR("${id}",
     "${name}","${colorId}")`);
    }
 }

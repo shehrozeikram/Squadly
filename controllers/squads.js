@@ -23,7 +23,6 @@ exports.createNewSquad= (req, res, next)=> {
 
     if(id, name, location, contact, image, team, bid, available, 
     createdAt, createdFrom) {
-
         if(image) {
             image.mv("./assets/squads/"+"SI-"+id+".jpg", function(err) {
                 if(err) {
