@@ -8,7 +8,7 @@ exports.createNewToDo = (req, res, next)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id = uuid();
+    const id = req.body.id;
     const listId = req.body.listId;
     const description = req.body.description;
     const name = req.body.name;

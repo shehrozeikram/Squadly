@@ -7,7 +7,7 @@ exports.createToDoList= (req, res, next)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id = uuid();
+    const id = req.body.id;
     const name = req.body.name;
     const accountId = req.body.accountId;
     const createdAt = dateTime;

@@ -8,7 +8,7 @@ exports.createNewSquad= (req, res, next)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id = uuid();
+    const id = req.body.id;
     const name = req.body.name;
     const location = req.body.location;
     const contact = req.body.contact;

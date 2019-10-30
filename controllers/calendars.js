@@ -14,6 +14,7 @@ exports.createNewCalendar= (req, res, next)=> {
     const createdAt = dateTime;
 
     if(id, name, accountId, colorId, createdAt) {
+        console.log("account id is", accountId);
         const calendar = new Calender(id, name, accountId, colorId, 
         createdAt);
         calendar.createCalendar().then(result=> {

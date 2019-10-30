@@ -11,7 +11,7 @@ exports.signup= async (req, res)=> {
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
 
-    const id = uuid();
+    const id = req.body.id;
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
