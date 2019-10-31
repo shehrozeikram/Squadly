@@ -2,12 +2,10 @@ const ToDo= require('../models/toDo');
 const uuid= require('uuid/v4');
 
 exports.createNewToDo = (req, res, next)=> {
-    console.log("test");
     var now = new Date();
     const dateTime = now.getFullYear() + '-' + (now.getMonth() + 1) +
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
-     console.log("req.body: ", req.body)
 
     const id = req.body.id;
     const listId = req.body.listId;
@@ -28,7 +26,6 @@ exports.createNewToDo = (req, res, next)=> {
         let imageName = ''
         if(image) {
             imageName = "TI-" + id;
-            console.log('No image saved!')
             image.mv("./assets/toDo/"+"TI-"+id+".jpg", function(err) {
                 if(err) {
                     console.log("Error while uploading image.");
@@ -64,10 +61,8 @@ exports.createNewToDo = (req, res, next)=> {
 }
 
 exports.updateToDo = (req, res, next)=> {
-
     const id = req.body.id;
     const description = req.body.description;
-    const name = req.body.name;
     const dueDate = req.body.dueDate;
 
     let image = null;
@@ -81,7 +76,7 @@ exports.updateToDo = (req, res, next)=> {
 
 
     let imageName = ''
-    if(id, description, name, image, dueDate) {
+    if(id, description, image, dueDate) {
         if(image) {
             imageName = "TI-" + id;
             image.mv("./assets/toDo/"+"TI-"+id+".jpg", function(err) {
@@ -94,7 +89,7 @@ exports.updateToDo = (req, res, next)=> {
             });
         }
                 
-        ToDo.updateToDo(id, description, name, imageName, dueDate)
+        ToDo.updateToDo(id, description, imageName, dueDate)
         .then(result=>{
             console.log("updateToDoSuccess:", result);
             res.json({

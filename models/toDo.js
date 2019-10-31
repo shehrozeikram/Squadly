@@ -18,8 +18,8 @@ module.exports= class toDo {
         "${this.image}", "${this.createdAt}", "${this.dueDate}")`);
     }
 
-    static updateToDo(id, description, name, image, dueDate) {
+    static updateToDo(id, description, image, dueDate) {
         return database.execute(`CALL UPDATE_TODO("${id}",
-        "${description}", "${name}", "${image}", "${dueDate}")`);
+        "${description}", "${image}", "${dueDate}")`);
     }
 }
