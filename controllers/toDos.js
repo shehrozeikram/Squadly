@@ -7,19 +7,28 @@ exports.createNewToDo = (req, res, next)=> {
     const dateTime = now.getFullYear() + '-' + (now.getMonth() + 1) +
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
      ":" + now.getSeconds();
+     console.log("req.body: ", req.body)
 
     const id = req.body.id;
     const listId = req.body.listId;
     const description = req.body.description;
     const name = req.body.name;
-    const image = req.files.image;
     const createdAt = dateTime;
     const dueDate = req.body.dueDate;
-
+    let image = null;
+    try {
+        image = req.files.image;
+    } catch (err) {
+        image = null;
+        console.log('Creating todo without Image!')
+    }
+    
     if(id, listId, description, name, image, createdAt,
     dueDate) {
-
+        let imageName = ''
         if(image) {
+            imageName = "TI-" + id;
+            console.log('No image saved!')
             image.mv("./assets/toDo/"+"TI-"+id+".jpg", function(err) {
                 if(err) {
                     console.log("Error while uploading image.");
@@ -28,9 +37,7 @@ exports.createNewToDo = (req, res, next)=> {
                     console.log("Image Uploaded");
                 }
             });
-        }
-        
-        let imageName = "TI-" + id;
+        }       
         
         const toDo = new ToDo(id, listId, description, name, imageName, 
             createdAt,dueDate);
@@ -61,12 +68,20 @@ exports.updateToDo = (req, res, next)=> {
     const id = req.body.id;
     const description = req.body.description;
     const name = req.body.name;
-    const image = req.files.image;
     const dueDate = req.body.dueDate;
 
+    let image = null;
+    try {
+        image = req.files.image;
+    } catch (err) {
+        image = null;
+        console.log('Creating todo without Image!')
+    }
+    
+    let imageName = ''
     if(id, description, name, image, dueDate) {
-
         if(image) {
+            imageName = "TI-" + id;
             image.mv("./assets/toDo/"+"TI-"+id+".jpg", function(err) {
                 if(err) {
                     console.log("Error while uploading image.");
@@ -76,9 +91,7 @@ exports.updateToDo = (req, res, next)=> {
                 }
             });
         }
-        
-        let imageName = "TI-" + id;
-        
+                
         ToDo.updateToDo(id, description, name, imageName, dueDate)
         .then(result=>{
             console.log("updateToDoSuccess:", result);

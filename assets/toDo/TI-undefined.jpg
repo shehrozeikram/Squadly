@@ -1,0 +1,1103 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: squadly
+-- ------------------------------------------------------
+-- Server version	8.0.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `account` (
+  `ID` varchar(100) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  `password` varchar(1000) DEFAULT NULL,
+  `salt` varchar(50) DEFAULT NULL,
+  `image` varchar(200) DEFAULT NULL,
+  `lastLogin` datetime DEFAULT NULL,
+  `available` tinyint(4) DEFAULT '1',
+  `createdFrom` varchar(45) DEFAULT NULL,
+  `phoneNumber` varchar(45) DEFAULT NULL,
+  `createdAt` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` VALUES ('00c4bcf1-9f12-482e-a49c-b5da83d5472d','Bbr1@bbr.com','bbr1',NULL,'$2a$10$YnlRr3v4tbiWlF43aBk3xe7JMsFlVrv5AoX2ifgBQppf8ZZYuxqa.','$2a$10$YnlRr3v4tbiWlF43aBk3xe',NULL,'2019-10-30 07:10:24',1,'mobile-app','+855 685 559 525','2019-10-30 07:10:24'),('1','zaheer@test.com','test',NULL,'1245678','',NULL,'9999-12-31 23:59:59',1,'mobile-app',NULL,NULL),('12345112','zahid@gmail.com','zahid',NULL,'$2a$10$PkFtn/1VRLvSOj.mnzomueyOLYF.4FrcO8.37eEWoyEpMsLJgxKDS','$2a$10$PkFtn/1VRLvSOj.mnzomue',NULL,'2019-10-30 10:53:11',1,'web','123313','2019-10-30 10:53:11'),('1e822e61-0b57-41c7-9139-70aeec7861bf','Bbr@bbr.com','bbr',NULL,'$2a$10$aIlUuY2sshDxAIfE4I6rp.KOsc3wdittY4wyKob05X7KYwKkFRU1u','$2a$10$aIlUuY2sshDxAIfE4I6rp.',NULL,'2019-10-30 06:50:56',1,'mobile-app','+923 436 468 649','2019-10-30 06:50:56'),('23984759348','nomi@nomi.com','nouman khan',NULL,'password','',NULL,'9999-12-31 23:59:59',1,'createdFrom',NULL,NULL),('24b5bd5e-3b49-4722-a874-fbf297ff91a8','saddam.rashid26@gmail.com','saddam','ER','$2a$10$NDcXCMsTmPpld/Wo20BWneP71iq9DCAZC.efbjJHwnGhjCmeZ7wBe',NULL,NULL,NULL,NULL,NULL,NULL,'2019-07-27 06:50:56'),('4bb7c903-53d3-4949-8e25-cfab1b7278ba','affan@gmail.com','affan',NULL,'$2a$10$B5y45u.N8BtlOUhr4NEGXeOveiqU8APnxPQtTTPqm8py1hmbnMrGG','$2a$10$B5y45u.N8BtlOUhr4NEGXe',NULL,'2019-10-30 07:02:25',1,'web','1233','2019-08-25 07:02:25'),('4e28a240-0766-4f24-8066-bcad9bb9467d','saddam.rashid2633@gmail.com','saddam','E','$2a$10$NxU5tSL1pIvr1d.b6mqZ.Oyux4dKbSbCMMuQ06GBK.1PteL6dx9vW',NULL,NULL,NULL,1,NULL,NULL,NULL),('6c5035ec-abed-403d-986f-3c3fa6adf98b','saddam.rashid233@gmail.com','saddam','ER','$2a$10$rAKqPu9okc2AlTSMfrtJ.uEiSnyI6Eo8gB.YUxj1Ve5XTcajP8Wo.',NULL,NULL,NULL,1,NULL,NULL,NULL),('7539e36e-4e56-4393-8e45-9f27baa5f811','Khizar@gmail.com','khizar',NULL,'$2a$10$9rR0elp671QGa6YKEWEfd.m3Qn2.BPPGFIGjb6xheuMAM0ZMSVDWO','$2a$10$9rR0elp671QGa6YKEWEfd.',NULL,'2019-10-30 07:52:09',1,'mobile-app','+333 333 333 3','2019-10-30 07:52:09'),('89dc1a70-ca52-4858-9d72-311b5e4ed495','new1@email.cm','newAccount',NULL,'$2a$10$sjq0r.D//OYbJWkSPYFb8eJ6W.S9GW7WLIPZiFyUTOoM7zEibdrGu','$2a$10$sjq0r.D//OYbJWkSPYFb8e',NULL,'2019-10-30 07:20:57',1,'mobile-app','testingNumber','2019-10-30 07:20:57'),('9575d858-fa1b-4be9-8643-10b6ae424905','ali@gmail.com','ali','E','$2a$10$rxUK/.q6JsqUyggo78EpOejeh5OyY.HlapH2M3XMnJczFdfxCN5O2',NULL,NULL,NULL,1,'web',NULL,NULL),('9kU1B3T0uqVJG34VC9yruclTcMD3','Sadam@s.gmail.com','sadam',NULL,'$2a$10$O9.aREOJDFTHWc9OGD4VSOd9niJ32lUJwWaVxDXDml5rOH/VnpOSm','$2a$10$O9.aREOJDFTHWc9OGD4VSO',NULL,'2019-10-30 11:53:10',1,'mobile-app','+033 274 763 23','2019-10-30 11:53:10'),('b71f0e43-d78d-45d3-83e9-788b8dad3cd3','noman@gmail.com','noman',NULL,'$2a$10$kxdqdAb1O3pkFrMG.71PQOt2.OGarXL7zniDGrdiZx4BOAu2Jqns2','$2a$10$kxdqdAb1O3pkFrMG.71PQO',NULL,'2019-10-30 06:39:45',1,'web','12332','2019-09-28 06:39:45'),('b73e01ae-6b40-4fca-af2e-741635d035a8','ahmed@gmail.com','ahmed','ER','$2a$10$uLCHUO7x3k8lBIb.W824Se4NI.D8jDb35z0aVhNDqy0slyzqXq72a',NULL,NULL,'2019-10-21 12:26:58',1,'web',NULL,NULL),('d03cef35-d4e1-4b16-8244-fc88518ab187','hassan@gmail.com','hassan','E','$2a$10$WuRanfRdjvssJ69g0OGBFOGxOvtbaOaH/BGf5gS2dW.KGkg12UxGS','$2a$10$WuRanfRdjvssJ69g0OGBFO',NULL,'2019-10-21 19:34:03',1,'web',NULL,NULL),('eojQ9CvQ6EVpOpe5lPd1CrV28RT2','shahroz@shahroz.com','shahroz',NULL,'12345678','',NULL,'9999-12-31 23:59:59',1,'mobile-app',NULL,NULL),('f2cff960-6099-42f9-b23e-8f19bccb9a7f','usman@gmail.com','usman','E','$2a$10$HgOTfpcKxIB74TMNeQ4Egu1mva0GR9jYVjCdfDoO7zbv.OQGCrlae',NULL,NULL,NULL,1,'web',NULL,'2019-04-20 06:50:56'),('fb118717-c098-44ee-a527-a960d1478f82','new@email.cm','newAccount',NULL,'password','$2a$10$QHuSKNgqZCZAW.NJpdppHe',NULL,'2019-10-30 06:29:29',1,'mobile-app','testingNumber','2019-10-30 06:29:29'),('gTYiVm29Kxg5pbQ120isnbOayS42','','',NULL,'$2a$10$d28MuuQ09vWsuyt6BkarF.ldkbCzhHHQXzYNiO9KQxR2zDSkatxOK','',NULL,'9999-12-31 23:59:59',1,'mobile-app','',NULL),('U6b7NtXMaMNegRILcWUhF3XDG4M2','Hello3@hotmail.com','hello 3',NULL,'$2a$10$tTV6e227PDQ474vJvrW.Eepg/jMLiG9IdmonKq2/e7Ebk/OZExJh.','',NULL,'9999-12-31 23:59:59',1,'mobile-app','+923 339 275 465',NULL),('undefined','Naeem@gmail.com','naeem',NULL,'$2a$10$BI4WZyVZzka.kwR4PHqsGu2F8iWkW2520j6xwn9YbEinH6g.eY9Im','$2a$10$BI4WZyVZzka.kwR4PHqsGu',NULL,'2019-10-30 11:20:35',1,'mobile-app','+033 274 763 23','2019-10-30 11:20:35');
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `business`
+--
+
+DROP TABLE IF EXISTS `business`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `business` (
+  `ID` varchar(100) NOT NULL,
+  `contact` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `available` tinyint(4) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `service` varchar(100) DEFAULT NULL,
+  `createdFrom` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `accountID_idx` (`accountID`),
+  CONSTRAINT `accountID` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `business`
+--
+
+LOCK TABLES `business` WRITE;
+/*!40000 ALTER TABLE `business` DISABLE KEYS */;
+INSERT INTO `business` VALUES ('32b8833f-d709-4391-8fd3-c71d416eba89','12345','saddam','null',1,'4e28a240-0766-4f24-8066-bcad9bb9467d','Marketing',NULL),('4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2','1122','saddam','BI-4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2',1,'4e28a240-0766-4f24-8066-bcad9bb9467d','Auto',NULL),('644a62b4-6e6c-48d7-b34c-4e343c58dbcb','123','saddam','null',1,'4e28a240-0766-4f24-8066-bcad9bb9467d','Mar',NULL),('95bda190-7419-4152-83a6-0e376ea7306d','1111','sadd','BI-95bda190-7419-4152-83a6-0e376ea7306d',1,'4e28a240-0766-4f24-8066-bcad9bb9467d','Auto','web');
+/*!40000 ALTER TABLE `business` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `businessemployee`
+--
+
+DROP TABLE IF EXISTS `businessemployee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `businessemployee` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `BID` varchar(100) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `businessEmployeeAccId_idx` (`accountID`),
+  KEY `businessEmployeebid_idx` (`BID`),
+  CONSTRAINT `businessEmployeeAccId` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`),
+  CONSTRAINT `businessEmployeebid` FOREIGN KEY (`BID`) REFERENCES `business` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `businessemployee`
+--
+
+LOCK TABLES `businessemployee` WRITE;
+/*!40000 ALTER TABLE `businessemployee` DISABLE KEYS */;
+INSERT INTO `businessemployee` VALUES (1,'644a62b4-6e6c-48d7-b34c-4e343c58dbcb','6c5035ec-abed-403d-986f-3c3fa6adf98b','true');
+/*!40000 ALTER TABLE `businessemployee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `calendar`
+--
+
+DROP TABLE IF EXISTS `calendar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `calendar` (
+  `ID` varchar(100) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `colorID` varchar(45) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `calendarAccID_idx` (`accountID`),
+  CONSTRAINT `calendarAccID` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `calendar`
+--
+
+LOCK TABLES `calendar` WRITE;
+/*!40000 ALTER TABLE `calendar` DISABLE KEYS */;
+INSERT INTO `calendar` VALUES ('-LsRW45SHvl06NtzmmGm','Sadan new calendar ','9kU1B3T0uqVJG34VC9yruclTcMD3','#FF790E','2019-10-30 11:54:24'),('07ca17cd-ec69-4886-b13a-0bbe95458c86','Personal','7539e36e-4e56-4393-8e45-9f27baa5f811','#EC547A','2019-10-30 07:52:09'),('17362fde-327f-400f-bcdc-7599edd70f28','Arts1','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','#EC547A','2019-10-30 07:18:08'),('3509752e-adb7-4942-97db-04307601daa0','Personal','89dc1a70-ca52-4858-9d72-311b5e4ed495','#EC547A','2019-10-30 07:20:57'),('4d9b1896-8c32-4dee-9115-ccde9aa32b4a','Arts1','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','#EC547A','2019-10-30 07:16:50'),('539e9100-c989-471f-899d-9d721cf7f4d4','Personal','12345112','#EC547A','2019-10-30 10:53:11'),('6ac7eb4b-fc95-4f0a-a556-6335a8ad193d','Personal','4bb7c903-53d3-4949-8e25-cfab1b7278ba','#EC547A','2019-10-30 07:02:25'),('6c04612f-b20f-4afa-b252-b99638cc6099','Design','6c5035ec-abed-403d-986f-3c3fa6adf98b','ali','2019-10-21 11:02:30'),('85324675-3a29-4dfd-a1d4-25e2cddded77','undefined','00c4bcf1-9f12-482e-a49c-b5da83d5472d','undefined','2019-10-30 07:48:00'),('8c6b6cdf-2fe5-4a82-ad3c-d91a95f03b9c','Khizar calendar ','7539e36e-4e56-4393-8e45-9f27baa5f811','#EC547A','2019-10-30 07:56:37'),('91c799e9-05f1-40b4-b39e-3ae5c031e046','Arts1','00c4bcf1-9f12-482e-a49c-b5da83d5472d','#EC547A','2019-10-30 07:21:52'),('a10cfab5-6732-47aa-a136-2e3e4a2721b9','Personal','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','#EC547A','2019-10-30 06:39:45'),('a9de0341-4198-493b-8c5a-45ac2e7af36f','Design','6c5035ec-abed-403d-986f-3c3fa6adf98b','shahroz','2019-10-21 11:33:01'),('b36a7bb0-d2e7-4f15-ae44-84a15f4b50cc','Personal','undefined','#EC547A','2019-10-30 11:20:35'),('ba03a315-68fb-4a04-9004-dcd1962bf307','Paper cutter','00c4bcf1-9f12-482e-a49c-b5da83d5472d','#5BCEAE','2019-10-30 07:49:49'),('c3f12b04-69f0-4524-a65e-7582a4f53ea5','Personal','1e822e61-0b57-41c7-9139-70aeec7861bf','#EC547A','2019-10-30 06:50:56'),('df1ed59b-ade0-40b5-80af-e085c00772c7','Personal','00c4bcf1-9f12-482e-a49c-b5da83d5472d','#EC547A','2019-10-30 07:10:24'),('e0a8df55-3919-4c93-9e63-164947acb0cd','Arts1','00c4bcf1-9f12-482e-a49c-b5da83d5472d','#EC547A','2019-10-30 07:21:15'),('f5169222-bfb8-4b37-bb69-7495c3624b34','Personal','9kU1B3T0uqVJG34VC9yruclTcMD3','#EC547A','2019-10-30 11:53:10'),('f9fbc77b-64dc-4c1b-aa0b-74bf86a1a0d3','Arts','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','#EC547A','2019-10-30 06:58:19');
+/*!40000 ALTER TABLE `calendar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `color`
+--
+
+DROP TABLE IF EXISTS `color`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `color` (
+  `name` varchar(45) NOT NULL,
+  `color` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color`
+--
+
+LOCK TABLES `color` WRITE;
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES ('#EC547A','pink'),('ali','blue '),('shahroz','red'),('sk','blue');
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `events` (
+  `ID` varchar(100) NOT NULL,
+  `calendarID` varchar(45) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `location` varchar(250) DEFAULT NULL,
+  `endDate` datetime DEFAULT NULL,
+  `allDay` varchar(45) DEFAULT NULL,
+  `notes` text,
+  `recurring` varchar(5) DEFAULT NULL,
+  `recurringDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `EventCalendarID_idx` (`calendarID`),
+  KEY `EventAccountID_idx` (`accountID`),
+  CONSTRAINT `EventAccountID` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`),
+  CONSTRAINT `EventCalendarID` FOREIGN KEY (`calendarID`) REFERENCES `calendar` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES ('12345','a9de0341-4198-493b-8c5a-45ac2e7af36f','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','Workshops','lahore','2019-10-31 00:00:00','false','hello','false',NULL);
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `job`
+--
+
+DROP TABLE IF EXISTS `job`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `job` (
+  `ID` varchar(100) NOT NULL,
+  `squadID` varchar(45) DEFAULT NULL,
+  `accountID` varchar(45) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `from` time DEFAULT NULL,
+  `to` time DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `acceptedAt` datetime DEFAULT NULL,
+  `cancelledAt` datetime DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `reason` text,
+  `rescheduledID` varchar(45) DEFAULT NULL,
+  `createdFrom` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `JobForAccount_idx` (`accountID`),
+  KEY `JobForSquad_idx` (`squadID`),
+  KEY `JobReschedule_idx` (`rescheduledID`),
+  CONSTRAINT `JobForAccount` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`),
+  CONSTRAINT `JobForSquad` FOREIGN KEY (`squadID`) REFERENCES `squad` (`ID`),
+  CONSTRAINT `JobReschedule` FOREIGN KEY (`rescheduledID`) REFERENCES `job` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `job`
+--
+
+LOCK TABLES `job` WRITE;
+/*!40000 ALTER TABLE `job` DISABLE KEYS */;
+INSERT INTO `job` VALUES ('69269480-87f4-4f2f-a7d1-a371e4559838','66e8d37f-dbb9-4da6-bb0f-b01e040d264d','f2cff960-6099-42f9-b23e-8f19bccb9a7f','Make APIs','lahore','2019-10-21 00:00:00','10:30:00','05:30:00','2019-10-19 17:12:08',NULL,NULL,'Pending',NULL,NULL,'web'),('b6d2766c-d209-47a0-b5d0-763bea67654c','66e8d37f-dbb9-4da6-bb0f-b01e040d264d','f2cff960-6099-42f9-b23e-8f19bccb9a7f','Make Frontend','Karachi','2019-10-30 00:00:00','11:30:00','03:30:00','2019-10-19 17:42:28',NULL,NULL,'Pending','Employee was ill.','b6d2766c-d209-47a0-b5d0-763bea67654c','web');
+/*!40000 ALTER TABLE `job` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobtask`
+--
+
+DROP TABLE IF EXISTS `jobtask`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jobtask` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `jobID` varchar(100) DEFAULT NULL,
+  `description` text,
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobtask`
+--
+
+LOCK TABLES `jobtask` WRITE;
+/*!40000 ALTER TABLE `jobtask` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobtask` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `service`
+--
+
+DROP TABLE IF EXISTS `service`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `service` (
+  `name` varchar(100) NOT NULL,
+  `available` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `service`
+--
+
+LOCK TABLES `service` WRITE;
+/*!40000 ALTER TABLE `service` DISABLE KEYS */;
+INSERT INTO `service` VALUES ('Architecture',1),('Fast Food',1);
+/*!40000 ALTER TABLE `service` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `squad`
+--
+
+DROP TABLE IF EXISTS `squad`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `squad` (
+  `ID` varchar(100) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `contact` varchar(45) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `team` tinyint(4) DEFAULT NULL,
+  `bid` varchar(100) DEFAULT NULL,
+  `available` tinyint(4) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `createdFrom` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `squadBusinessID_idx` (`bid`),
+  CONSTRAINT `squadBusinessID` FOREIGN KEY (`bid`) REFERENCES `business` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `squad`
+--
+
+LOCK TABLES `squad` WRITE;
+/*!40000 ALTER TABLE `squad` DISABLE KEYS */;
+INSERT INTO `squad` VALUES ('22341','ali','fsd','42312','SI-22341',1,'4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2',1,'2019-10-30 10:37:47','web'),('66e8d37f-dbb9-4da6-bb0f-b01e040d264d','ahmed','rwp','234','SI-66e8d37f-dbb9-4da6-bb0f-b01e040d264d',1,'4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2',1,'2019-10-19 02:34:02','web'),('a121cb22-5cc4-42be-a357-6d84ec54ef4a','sad','Karachi','123','null',1,'4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2',1,'2019-10-18 17:23:11','web'),('bfe70402-2e53-410b-b1cc-d4dd9ec546cb','sad','lahore','123','null',1,'4bde8ec7-f952-4a3c-bd5b-0f3e2a0ba0e2',1,'2019-10-18 17:02:17','web');
+/*!40000 ALTER TABLE `squad` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `squadmember`
+--
+
+DROP TABLE IF EXISTS `squadmember`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `squadmember` (
+  `squadID` varchar(100) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `scheduler` tinyint(4) DEFAULT NULL,
+  KEY `squadMember` (`squadID`,`accountID`),
+  KEY `accoundMemberFK_idx` (`accountID`),
+  CONSTRAINT `accoundMemberFK` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`),
+  CONSTRAINT `squadMemberFK` FOREIGN KEY (`squadID`) REFERENCES `squad` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `squadmember`
+--
+
+LOCK TABLES `squadmember` WRITE;
+/*!40000 ALTER TABLE `squadmember` DISABLE KEYS */;
+INSERT INTO `squadmember` VALUES ('66e8d37f-dbb9-4da6-bb0f-b01e040d264d','f2cff960-6099-42f9-b23e-8f19bccb9a7f',1),('66e8d37f-dbb9-4da6-bb0f-b01e040d264d','6c5035ec-abed-403d-986f-3c3fa6adf98b',1);
+/*!40000 ALTER TABLE `squadmember` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `todo`
+--
+
+DROP TABLE IF EXISTS `todo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `todo` (
+  `ID` varchar(100) NOT NULL,
+  `listID` varchar(100) DEFAULT NULL,
+  `description` text,
+  `name` varchar(45) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `createdAt` varchar(45) DEFAULT NULL,
+  `dueDate` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `TODOListID_idx` (`listID`),
+  CONSTRAINT `TODOListID` FOREIGN KEY (`listID`) REFERENCES `todolist` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `todo`
+--
+
+LOCK TABLES `todo` WRITE;
+/*!40000 ALTER TABLE `todo` DISABLE KEYS */;
+INSERT INTO `todo` VALUES ('17167a9f-58b8-430c-b50c-217276763cef','42cd54a7-849a-4fd9-9882-80d0debc08f4','Design Squadly Logo','Design','TI-17167a9f-58b8-430c-b50c-217276763cef','2019-10-19 22:54:52','2019-11-5'),('43222223','42cd54a7-849a-4fd9-9882-80d0debc08f4','design','design','TI-43222223','2019-10-30 10:43:36','19-2-11'),('cd57f50d-e248-4ca6-9523-9be4c5338a80','42cd54a7-849a-4fd9-9882-80d0debc08f4','Card Design','design','TI-cd57f50d-e248-4ca6-9523-9be4c5338a80','2019-10-19 23:5:41','2019-10-25');
+/*!40000 ALTER TABLE `todo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `todolist`
+--
+
+DROP TABLE IF EXISTS `todolist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `todolist` (
+  `ID` varchar(100) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `accountID` varchar(100) DEFAULT NULL,
+  `createdDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `todoAccount_idx` (`accountID`),
+  CONSTRAINT `todoAccount` FOREIGN KEY (`accountID`) REFERENCES `account` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `todolist`
+--
+
+LOCK TABLES `todolist` WRITE;
+/*!40000 ALTER TABLE `todolist` DISABLE KEYS */;
+INSERT INTO `todolist` VALUES ('215e77af-f24f-409e-8c41-22532880f874','Personal','7539e36e-4e56-4393-8e45-9f27baa5f811','2019-10-30 07:52:09'),('28bd057a-727e-4bbd-8462-60ae1d0e523f','Personal','undefined','2019-10-30 11:20:35'),('3f06f4c6-e798-4d83-b66a-ea096a2f36a3','Personal','4bb7c903-53d3-4949-8e25-cfab1b7278ba','2019-10-30 07:02:25'),('42cd54a7-849a-4fd9-9882-80d0debc08f4','Marketing','24b5bd5e-3b49-4722-a874-fbf297ff91a8','2019-10-19 21:33:56'),('456a0864-4934-4750-a450-a33d14d4c7a2','Personal','00c4bcf1-9f12-482e-a49c-b5da83d5472d','2019-10-30 07:10:24'),('54323','design','b71f0e43-d78d-45d3-83e9-788b8dad3cd3','2019-10-30 10:50:25'),('98aac3cc-06d7-48eb-88c1-74b4edd68c0d','undefined','7539e36e-4e56-4393-8e45-9f27baa5f811','2019-10-30 08:09:42'),('ac3880dd-0b6b-4ada-9eeb-db25f981a3a8','Personal','89dc1a70-ca52-4858-9d72-311b5e4ed495','2019-10-30 07:20:57'),('f65cee02-d1cc-476d-ba94-88a7d3c71200','Personal','12345112','2019-10-30 10:53:11'),('f90ab206-9634-42fa-826b-853305ac4517','Personal','9kU1B3T0uqVJG34VC9yruclTcMD3','2019-10-30 11:53:10');
+/*!40000 ALTER TABLE `todolist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'squadly'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `ADD_BUSINESS_EMPLOYEE` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ADD_BUSINESS_EMPLOYEE`(IN bid varchar(100), IN accountId varchar(100),
+IN status varchar(4))
+BEGIN
+INSERT INTO businessemployee(BID, accountID, status)
+VALUES(bid, accountId, status);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `ADD_SQUAD_MEMBER` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ADD_SQUAD_MEMBER`(IN squadId varchar(100),
+IN accountId varchar(100), IN scheduler tinyint(4))
+BEGIN
+INSERT INTO squadly.squadmember(squadID, accountID, scheduler)
+VALUE(squadId, accountId, scheduler);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_BUSINESS` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_BUSINESS`(IN id varchar(100), 
+IN name varchar(45), In contact varchar(45), IN image varchar(100),
+In available tinyint(4), IN accountId varchar(100),  IN service varchar(100),
+IN createdFrom varchar(45))
+BEGIN
+insert into business(ID, contact, name, image, available, accountID, service, createdFrom)
+values(id, contact, name, image, available, accountId, service, createdFrom);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_CALENDAR` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_CALENDAR`(IN id varchar(100), 
+IN name varchar(50), IN accountId varchar(100), IN colorId varchar(45),
+IN createdAt datetime)
+BEGIN
+INSERT INTO squadly.calendar(ID, name, accountID, colorID, createdAt)
+VALUES(id, name, accountId, colorId, createdAt);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_COLOR` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_COLOR`(IN name varchar(45),
+IN color varchar(15))
+BEGIN
+INSERT INTO squadly.color(name, color) VALUES(name, color);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_EVENT` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_EVENT`(in id varchar(100),
+in calendarID varchar(45),in accountId varchar(100),
+in title varchar(100),
+in location varchar(250), in endDate datetime,
+in allDay varchar(45),in notes text, recurring varchar(5))
+BEGIN
+insert into events(ID,calendarID, accountId, title,location,
+endDate,allDay,notes,recurring)
+values(id,calendarID, accountId,title,location,endDate,allDay,
+notes,recurring);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_JOB` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_JOB`(IN id varchar(100),
+IN squadId varchar(45), IN accountId varchar(45), 
+IN description varchar(1000), IN location varchar(100), IN date datetime,
+IN startTime time, IN endTime time, IN createdAt datetime,
+IN status varchar(45), IN createdFrom varchar(100))
+BEGIN
+INSERT INTO squadly.job(ID, squadID, accountID, description, location, 
+date, job.from, job.to, createdAt, status, createdFrom) 
+VALUES(id, squadId, accountId, description, location, 
+date, startTime, endTime, createdAt, status, createdFrom);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_JOBTASK` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_JOBTASK`(IN jobId varchar(100),
+IN description text, IN status varchar(45))
+BEGIN
+INSERT INTO squadly.jobtask(jobID, description, status)
+VALUES(jobId, description, status);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_SERVICE` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_SERVICE`(IN name varchar(100),
+IN available tinyint(4))
+BEGIN
+INSERT INTO squadly.service(name, available) values(name, available);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_SQUAD` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_SQUAD`(IN id varchar(100), IN name varchar(45), 
+IN location varchar(100), IN contact varchar(45), IN image varchar(45), 
+IN team tinyint(4), IN bid varchar(100), IN available tinyint(4),
+IN createdAt datetime, IN createdFrom varchar(45))
+BEGIN
+INSERT INTO squadly.squad(ID, name, location, contact, image, team, bid, available,
+createdAt, createdFrom) values(id, name, location, contact, image, team, bid, available,
+createdAt, createdFrom);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_TODO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_TODO`(IN id varchar(100), 
+IN listId varchar(100), IN description text, IN name varchar(45),
+IN image varchar(45), IN createdAt varchar(45), IN dueDate varchar(45))
+BEGIN
+INSERT INTO squadly.todo(ID, listID, description, name, image, createdAt,
+dueDate) values(id, listId, description, name, image, createdAt, dueDate);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CREATE_TODOLIST` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CREATE_TODOLIST`(IN id varchar(100), 
+IN name varchar(45), IN accountId varchar(100), IN createdAt datetime)
+BEGIN
+INSERT INTO squadly.todolist(ID, name, accountID, createdDate)
+VALUES(id, name, accountId, createdAt);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `EMAIL_EXISTENCE` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `EMAIL_EXISTENCE`(IN email varchar(100))
+BEGIN
+SELECT * from squadly.account WHERE account.email=email;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `LOGIN` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LOGIN`(IN email varchar(100))
+BEGIN
+SELECT * from squadly.account WHERE account.email=email;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `REMOVE_BUSINESS_EMPLOYEE` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `REMOVE_BUSINESS_EMPLOYEE`(IN bid varchar(100), 
+IN accountId varchar(100))
+BEGIN
+DELETE from squadly.businessEmployee WHERE businessEmployee.BID=bid
+and businessEmployee.accountID=accountId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `REMOVE_SQUAD_MEMBER` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `REMOVE_SQUAD_MEMBER`(IN squadId varchar(100),
+IN accountId varchar(100))
+BEGIN
+DELETE FROM squadly.squadmember WHERE squadmember.squadID = squadId
+AND squadmember.accountID = accountId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `RESCHEDULE_JOB` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `RESCHEDULE_JOB`(IN id varchar(100),
+IN date datetime, IN startTime time, IN endTime time, IN reason text,
+IN rescheduledId varchar(45))
+BEGIN
+UPDATE squadly.job set job.date=date, job.from=startTime, job.to=endTime,
+job.reason=reason, job.rescheduledID=rescheduledId
+WHERE job.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SIGNUP` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SIGNUP`(IN id varchar(100), IN name varchar(100), 
+In email varchar(100), IN password varchar(1000), 
+IN salt varchar(50), IN lastLogin datetime, 
+IN createdFrom varchar(45), IN phoneNumber varchar(45), IN createdAt datetime)
+BEGIN
+INSERT INTO account(ID, name, email, password, salt, lastLogin,
+available, createdFrom, phoneNumber, createdAt) 
+values(id, name, email, password, salt, lastLogin, '1', 
+createdFrom, phoneNumber, createdAt);
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SIGNUP_MONTHLY` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SIGNUP_MONTHLY`()
+BEGIN
+select * from squadly.account where
+createdAt >= date_sub(now(), interval 12 month);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `TOTAL_SIGNUPS` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `TOTAL_SIGNUPS`()
+BEGIN
+SELECT * FROM squadly.account;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_BUSINESS` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_BUSINESS`(IN id varchar(100), 
+IN contact varchar(45), IN name varchar(45),
+IN image varchar(45), IN service varchar(100))
+BEGIN
+UPDATE business SET contact=contact, name=name, image=image, service=service WHERE business.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_CALENDAR` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_CALENDAR`(IN id varchar(100),
+IN name varchar(50), IN colorId varchar(45))
+BEGIN
+UPDATE squadly.calendar set calendar.name=name, calendar.colorID=colorId
+WHERE calendar.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_COLOR` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_COLOR`(IN name varchar(45),
+IN color varchar(15))
+BEGIN
+UPDATE squadly.color set color=color WHERE color.name=name;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_EVENT` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_EVENT`(in id varchar(100),in calendarID varchar(45),
+in title varchar(100),
+in location varchar(250), in endDate datetime,
+in allDay varchar(45),in notes text)
+BEGIN
+update events
+set
+events.calendarID=calendarID,events.title=title,
+events.location=location,
+events.endDate=endDate,events.allDay=allDay,events.notes=notes
+where events.ID = id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_JOB` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_JOB`(IN id varchar(100), 
+description varchar(1000), IN location varchar(100), IN date datetime, 
+IN startTime time, IN endTime time)
+BEGIN
+UPDATE squadly.job set description=description, location=location,
+date=date, job.from=startTime, job.to=endTime 
+WHERE job.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_JOBTASK` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_JOBTASK`(IN id int(11),
+IN jobId varchar(100), IN description text, IN status varchar(45))
+BEGIN
+UPDATE squadly.jobtask SET jobtask.description=description,
+jobtask.status=status WHERE jobtask.ID=id AND jobtask.jobID=jobId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_LASTLOGIN` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_LASTLOGIN`(IN id varchar(100),
+IN lastLogin datetime)
+BEGIN
+UPDATE squadly.account SET account.lastLogin=lastLogin
+WHERE account.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_SERVICE` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_SERVICE`(IN previousName varchar(100),
+IN newName varchar(100))
+BEGIN
+UPDATE squadly.service set name=newName where service.name=previousName;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_SQUAD` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_SQUAD`(IN id varchar(100), 
+IN name varchar(45), IN location varchar(100), 
+IN contact varchar(45), IN image varchar(45))
+BEGIN
+UPDATE squadly.squad set name=name, location=location, contact=contact,
+image=image WHERE squad.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_TODO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_TODO`(IN id varchar(100),
+IN description text, IN name varchar(45), IN image varchar(45),
+IN dueDate varchar(45))
+BEGIN
+UPDATE squadly.todo set todo.description=description, todo.name=name,
+todo.image=image, todo.dueDate=dueDate WHERE todo.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `UPDATE_TODOLIST` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UPDATE_TODOLIST`(IN id varchar(100),
+IN name varchar(45))
+BEGIN
+UPDATE squadly.todolist set todolist.name=name WHERE todolist.ID=id;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-10-30 12:05:48

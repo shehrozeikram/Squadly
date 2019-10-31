@@ -112,7 +112,7 @@ exports.login= async (req, res, next)=> {
      const email = req.body.email;
      const password = req.body.password;
      const loginTime = dateTime;
-
+    console.log("Login request generated: ", req.body)
      if(email, password, loginTime) {
          
         User.loginUser(email).then(async ([rows, dataField])=> {
