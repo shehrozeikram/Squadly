@@ -73,8 +73,6 @@ exports.updateToDo = (req, res, next)=> {
         console.log('Creating todo without Image!')
     }
     
-
-
     let imageName = ''
     if(id, description, image, dueDate) {
         if(image) {
@@ -109,5 +107,30 @@ exports.updateToDo = (req, res, next)=> {
             status: "failure",
             error: "All fields are required"
         })
+    }
+}
+
+exports.removeToDo = (req , res , next)=>{
+    const id      = req.body.id;
+
+    if(id){
+        ToDo.removeTODO(id)
+        .then(result=>{
+            console.log("removeTodoSuccess" , result);
+            res.json({
+                status: "success"
+            });
+        })
+        .catch(err=>{
+            console.log("removeTodoErr",err);
+            res.json({
+                status : "success"
+            });
+        })
+    }else{
+        res.json({
+            status : "Failure",
+
+        });
     }
 }
