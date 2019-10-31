@@ -115,8 +115,8 @@ exports.updateToDo = (req, res, next)=> {
     }
 }
 
-exports.removeToDo = (req , res , next)=>{
-    const id      = req.body.id;
+exports.removeTodo = (req , res , next)=>{
+    const id  = req.body.id;
 
     if(id){
         ToDo.removeTODO(id)
@@ -129,7 +129,7 @@ exports.removeToDo = (req , res , next)=>{
         .catch(err=>{
             console.log("removeTodoErr",err);
             res.json({
-                status : "success"
+                status : "Error"
             });
         })
     }else{
@@ -138,4 +138,36 @@ exports.removeToDo = (req , res , next)=>{
 
         });
     }
+}
+
+exports.removeMultipleTodo = (req , res , next)=>{
+    
+    let ids = req.body.ids;
+    // console.log([ids]);
+     
+
+if(ids){
+    ids.toString().split(" ").forEach(function(data){
+        ToDo.removeMultipleTodo(data)
+        .then(result=>{
+             console.log("RemoveTodosSuccess" , result);
+             res.json({
+                 status : "success"
+             })
+         })
+         .catch(err=>{
+             console.log("RemoveTodosError" , err);
+             res.json({
+                 status : "Error"
+             })
+         })
+    })
+
+
+ }else{
+     res.json({
+         status : "Failure",
+         "Error" : err
+     });
+ }
 }

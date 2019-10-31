@@ -26,4 +26,9 @@ module.exports= class toDo {
     static removeTODO(id ){
         return database.execute(`CALL REMOVE_TODO("${id}")`);
     }
+
+    static removeMultipleTodo(ids){
+        return database.execute(`CALL REMOVE_TODO("${ids}")`)
+        }
+
 }

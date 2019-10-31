@@ -74,3 +74,29 @@ exports.updateEvent= (req, res, next)=> {
        })
    }
 }
+
+
+exports.removeEvent = (req , res , next)=>{
+    const id = req.body.id;
+    if(id){
+        Event.removeEvents(id)
+        .then(result=>{
+            console.log("RemoveEventSuccess" , result);
+            res.json({
+                status : "success"
+            })
+        })
+        .catch(err=>{
+            console.log("RemoveEventError" , err);
+            res.json({
+                status : "Error"
+            })
+        })
+    }else{
+        res.json({
+            status : "Failure",
+            "Error" : err
+        });
+    }
+}
+

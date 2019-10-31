@@ -20,4 +20,10 @@ module.exports = class events{
        return database.execute(`CALL UPDATE_EVENT("${id}","${calendarId}",
        "${title}","${location}", "${endDate}", "${allDay}","${notes}")`);
    }
+
+   static removeEvents(id){
+       return database.execute(`CALL REMOVE_EVENT("${id}")`)
+   }
+
+
 }
