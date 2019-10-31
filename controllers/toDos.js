@@ -101,3 +101,28 @@ exports.updateToDo = (req, res, next)=> {
         })
     }
 }
+
+exports.removeToDo = (req , res , next)=>{
+    const id      = req.body.id;
+
+    if(id){
+        ToDo.removeTODO(id)
+        .then(result=>{
+            console.log("removeTodoSuccess" , result);
+            res.json({
+                status: "success"
+            });
+        })
+        .catch(err=>{
+            console.log("removeTodoErr",err);
+            res.json({
+                status : "success"
+            });
+        })
+    }else{
+        res.json({
+            status : "Failure",
+
+        });
+    }
+}
