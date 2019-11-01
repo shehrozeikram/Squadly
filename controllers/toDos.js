@@ -118,13 +118,14 @@ exports.removeToDo = (req , res , next)=>{
         .then(result=>{
             console.log("removeTodoSuccess" , result);
             res.json({
-                status: "success"
+                status: "Success",
+                messsage: "Todo removed!"
             });
         })
         .catch(err=>{
             console.log("removeTodoErr",err);
             res.json({
-                status : "success"
+                status : "Failed to remove todo"
             });
         })
     }else{

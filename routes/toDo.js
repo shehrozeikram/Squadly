@@ -6,5 +6,6 @@ const router = express.Router();
 router.post("/createToDo", toDoController.createNewToDo);
 router.post("/updateToDo", toDoController.updateToDo);
 router.post("/removeToDo", toDoController.removeToDo);
+router.post("/removeToDos", toDoController.removeToDos);
 
 module.exports = router;

@@ -18,7 +18,9 @@ const EventRoutes= require('./routes/event');
 const app = express();
 
 app.use(cors());
-
+app.get('/test', (req, res) => {
+    res.send('Hello!')
+})
 app.use(bodyParser.json());
 
 app.use(fileUpload({ safeFileNames: true, preserveExtension: true }));
