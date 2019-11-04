@@ -177,8 +177,58 @@ exports.login= async (req, res, next)=> {
 }
 
 exports.setAvailability = async (req, res) => {
+    const now = new Date();
+    const Time = now.getHours()+":" + now.getMinutes() +
+    ":" + now.getSeconds();
+
     console.log("Req for setAvailability received.\nReq.body: ", req.body)
     console.log("TO BE IMPLEMENTED")
+    console.log("Here:", (req.body.Monday).to)
+    // console.log(JSON.parse('{ "name":"John", "age":30, "city":"New York"}').name)
+    // res.send("error")
+    const MondayTo = req.body.Monday.to;
+    const MondayFrom = req.body.Monday.from;
+    const TuesdayTo = req.body.Tuesday.to;
+    const TuesdayFrom = req.body.Tuesday.from;
+    const WednesdayTo = req.body.Wednesday.to;
+    const WednesdayFrom = req.body.Wednesday.from;
+    const ThursdayTo = req.body.Thursday.to;
+    const ThursdayFrom = req.body.Thursday.from;
+    const FridayTo = req.body.Friday.to;
+    const FridayFrom = req.body.Friday.from;
+    const SaturdayTo = req.body.Saturday.to;
+    const SaturdayFrom = req.body.Saturday.from;
+    const SundayTo = req.body.Sunday.to;
+    const SundayFrom = req.body.Sunday.from;
+    const accountId = req.body.accountId;
+
+    if(MondayTo,MondayFrom,TuesdayTo,TuesdayFrom,WednesdayTo,WednesdayFrom,ThursdayTo
+        ,ThursdayFrom,FridayTo,FridayFrom,SaturdayTo,SaturdayFrom,SundayTo,SundayFrom,accountId) {
+    console.log("text" ,MondayTo);
+            User.setAvailability(MondayTo , MondayFrom ,TuesdayTo ,TuesdayFrom , WednesdayTo ,
+                WednesdayFrom , ThursdayTo , ThursdayFrom ,FridayTo ,  FridayFrom , 
+                SaturdayTo ,SaturdayFrom ,  SundayTo ,  SundayFrom ,accountId)
+                .then(result=> {
+                console.log("AvailabilitySuccess:", result);
+                res.json({
+                    status: "success"
+                })
+            })
+            .catch(err=>{
+                console.log("AvailabilityErr",err);
+                res.json({
+                    status: "failure",
+                    error: err
+                })
+            })
+        }
+        else {
+            res.json({
+                status: "failure",
+                error: "All fields are required"
+            })
+        }
+
     ///////////////////////////////////////////////////////////////
     // This is the log of req.body
     // Req.body:  {
@@ -192,8 +242,8 @@ exports.setAvailability = async (req, res) => {
     //   accountId: 'MKllEiPrcSRoakxJpiPVPvLSnlE3'
     // }
     ///////////////////////////////////////////////////////////////
-    res.json({
-        status: "TO BE IMPLEMENTED",
-        message: "Req successfully received!"
-    })
+    // res.json({
+    //     status: "TO BE IMPLEMENTED",
+    //     message: "Req successfully received!"
+    // })
 }

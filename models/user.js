@@ -31,4 +31,13 @@ module.exports= class user {
         return database.execute(`CALL UPDATE_LASTLOGIN("${id}",
         "${lastLogin}")`);
     }
+
+    static setAvailability( mondayTo,mondayFrom ,tuesdayTo,tuesdayFrom , wednesdayTo,
+        wednesdayFrom , thursdayTo , thursdayFrom ,fridayTo ,  fridayFrom , 
+        saturdayTo ,saturdayFrom ,  sundayTo ,  sundayFrom ,accountId) {
+            return database.execute(`CALL SET_AVAILABILITY("${mondayTo}","${mondayFrom}","${tuesdayTo}",
+            "${tuesdayFrom}","${wednesdayTo}","${wednesdayFrom}","${thursdayTo}","${thursdayFrom}",
+            "${fridayTo}","${fridayFrom}","${saturdayTo}","${saturdayFrom}","${sundayTo}",
+            "${sundayFrom}","${accountId}")`);
+        }
 }

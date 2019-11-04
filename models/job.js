@@ -38,4 +38,8 @@ module.exports= class job {
         "${date}", "${startTime}", "${endTime}", "${reason}", 
         "${rescheduledId}")`);
     }
+
+    static updateJobStatus(id , status) {
+        return database.execute(`CALL UPDATE_STATUS("${id}","${status}")`)
+    }
 }

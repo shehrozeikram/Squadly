@@ -113,3 +113,29 @@ exports.rescheduleJob= (req, res, next)=> {
         })
     }
 }
+
+exports.updateJobStatus = (req , res , next)=>{
+        const id = req.body.id; 
+        const status = req.body.status;
+
+        if(id , status){
+            Job.updateJobStatus(id , status)
+            .then(result=>{
+                res.json({
+                    status : "success",
+                    res : result
+                })
+            })
+            .catch(err=>{
+                res.json({
+                    status : "Error",
+                    Error : err
+                })
+            })
+        }else{
+            res.json({
+                status : "Failure",
+                error : err
+            })
+        }
+}
