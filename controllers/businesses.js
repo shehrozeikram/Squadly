@@ -152,3 +152,11 @@ exports.removeBusinessEmployee= (req, res, next)=> {
         })
     }
 }
+
+exports.updateBusinessEmployeeStatus = (req, res) => {
+    console.log('req.body: ', req.body)
+    res.json({
+        status: "success",
+        message: "to be implemented"
+    })
+}

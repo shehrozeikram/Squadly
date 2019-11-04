@@ -19,7 +19,13 @@ exports.signup= async (req, res)=> {
     const createdFrom = req.body.createdFrom;
     const phoneNumber = req.body.phoneNumber;
     const createdAt = dateTime;  
-
+    if(email === '' || password === '') {
+        res.json({
+            status: "failure",
+            error: "Email or Password cannot be empty!"
+        })
+        return 
+    }
     if(id, name, email, password, lastLogin, createdFrom, phoneNumber, createdAt) {
         User.emailExistence(email).then(async ([rows])=> {
             console.log("rows", rows[0].length);
@@ -114,7 +120,13 @@ exports.login= async (req, res, next)=> {
      const loginTime = dateTime;
     console.log("Login request generated: ", req.body)
      if(email, password, loginTime) {
-         
+        if(email === '' || password === '') {
+            res.json({
+                status: "failure",
+                error: "Email or Password cannot be empty!"
+            })
+            return 
+        }
         User.loginUser(email).then(async ([rows, dataField])=> {
             // console.log("rowsss",rows[0][0].password);
 
@@ -162,4 +174,26 @@ exports.login= async (req, res, next)=> {
             error: "All fields are required" 
         })
      }
+}
+
+exports.setAvailability = async (req, res) => {
+    console.log("Req for setAvailability received.\nReq.body: ", req.body)
+    console.log("TO BE IMPLEMENTED")
+    ///////////////////////////////////////////////////////////////
+    // This is the log of req.body
+    // Req.body:  {
+    //   Wednesday: { to: '23:00', name: 'Wed', from: '09:00' },
+    //   Tuesday: { to: '23:00', name: 'Tue', from: '09:00' },
+    //   Thursday: { to: '23:00', name: 'Thu', from: '09:00' },
+    //   Sunday: { to: '00:00', name: 'Sun', from: '09:00' },
+    //   Saturday: { to: '23:00', name: 'Sat', from: '09:00' },
+    //   Monday: { to: '23:00', name: 'Mon', from: '09:00' },
+    //   Friday: { to: '23:00', name: 'Fri', from: '09:00' },
+    //   accountId: 'MKllEiPrcSRoakxJpiPVPvLSnlE3'
+    // }
+    ///////////////////////////////////////////////////////////////
+    res.json({
+        status: "TO BE IMPLEMENTED",
+        message: "Req successfully received!"
+    })
 }

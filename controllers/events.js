@@ -4,17 +4,17 @@ const Event = require('../models/event');
 exports.createNewEvent= (req, res, next)=> {
    const id = req.body.id;
    const calendarId = req.body.calendarId;
-   const accountId = req.body.accountId;
    const title = req.body.title;
    const location = req.body.location;
+   const startDate = req.body.startDate;
    const endDate = req.body.endDate;
    const allDay = req.body.allDay;
    const notes = req.body.notes;
    const recurring = false;
 
-   if(id,calendarId,accountId, title,location,endDate,allDay,notes) {
+   if(id,calendarId, title,location,startDate,endDate,allDay,notes) {
 
-       const events = new Event(id,calendarId,accountId,title,location,endDate,allDay,
+       const events = new Event(id,calendarId,title,location,startDate,endDate,allDay,
            notes,recurring);
 
        events.createEvents().then(result=> {
@@ -46,13 +46,14 @@ exports.updateEvent= (req, res, next)=> {
    const calendarId = req.body.calendarId;
    const title = req.body.title;
    const location = req.body.location;
+   const startDate = req.body.startDate;
    const endDate = req.body.endDate;
    const allDay = req.body.allDay;
    const notes = req.body.notes;
 
    if(id,calendarId,title,location,endDate,allDay,notes) {
 
-       Event.updateEvents(id,calendarId,title,location,endDate,allDay,notes)
+       Event.updateEvents(id,calendarId,title,location,startDate,endDate,allDay,notes)
        .then(result=> {
            console.log("eventsUpdateSuccess:", result);
           res.json({
@@ -74,3 +75,29 @@ exports.updateEvent= (req, res, next)=> {
        })
    }
 }
+
+
+exports.removeEvent = (req , res , next)=>{
+    const id = req.body.id;
+    if(id){
+        Event.removeEvents(id)
+        .then(result=>{
+            console.log("RemoveEventSuccess" , result);
+            res.json({
+                status : "success"
+            })
+        })
+        .catch(err=>{
+            console.log("RemoveEventError" , err);
+            res.json({
+                status : "Error"
+            })
+        })
+    }else{
+        res.json({
+            status : "Failure",
+            "Error" : err
+        });
+    }
+}
+
