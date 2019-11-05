@@ -34,4 +34,8 @@ module.exports= class business {
         return database.execute(`CALL REMOVE_BUSINESS_EMPLOYEE("${bid}",
         "${accountId}")`);
     }
+
+    static updateBusinessEmployeeStatus(bid, accountId, status) {
+        return database.execute(`CALL UPDATE_BUSINESS_EMP_STATUS("${bid}","${accountId}","${status}")`)
+    }
 }

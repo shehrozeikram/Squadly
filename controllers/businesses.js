@@ -155,8 +155,30 @@ exports.removeBusinessEmployee= (req, res, next)=> {
 
 exports.updateBusinessEmployeeStatus = (req, res) => {
     console.log('req.body: ', req.body)
+    const bid = req.body.bid; 
+    const accountId = req.body.accountId;
+    const status = req.body.status;
+
+    if(bid, accountId, status){
+        Business.updateBusinessEmployeeStatus(bid, accountId, status)
+        .then(result=>{
+            res.json({
+                status : "Success",
+                res : result
+            })
+            console.log("this is update result ",result);
+        })
+        .catch(err=>{
+            res.json({
+                status : "updateBusinessEmployeeStatus Error",
+                Error : err
+            })
+            console.log("this is update error ",err);
+        })
+    }else{
     res.json({
         status: "success",
         message: "to be implemented"
     })
+ }
 }

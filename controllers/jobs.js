@@ -125,6 +125,7 @@ exports.updateJobStatus = (req , res , next)=>{
                     status : "success",
                     res : result
                 })
+                console.log("job", result)
             })
             .catch(err=>{
                 res.json({

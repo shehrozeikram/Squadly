@@ -1,7 +1,7 @@
 const database= require('../utils/database');
 
 module.exports= class user {
-    constructor(id, name, email, password, lastLogin, createdFrom, phoneNumber, createdAt, salt) {
+    constructor(id, name, email, password, lastLogin, createdFrom, phoneNumber,createdAt, salt) {
         this.id = id;
         this.name= name;
         this.email= email;
@@ -15,7 +15,8 @@ module.exports= class user {
     }
 
     createUser() {
-        return database.execute(`CALL SIGNUP("${this.id}", "${this.name}", "${this.email}", "${this.password}", "${this.salt}", "${this.lastLogin}", "${this.createdFrom}", "${this.phoneNumber}", "${this.createdAt}" )`);
+        return database.execute(`CALL SIGNUP("${this.id}", "${this.name}", "${this.email}", "${this.password}", "${this.salt}", "${this.lastLogin}", "${this.createdFrom}",
+        "${this.phoneNumber}", "${this.createdAt}" )`);
 
     }
 
@@ -32,12 +33,26 @@ module.exports= class user {
         "${lastLogin}")`);
     }
 
-    static setAvailability( mondayTo,mondayFrom ,tuesdayTo,tuesdayFrom , wednesdayTo,
-        wednesdayFrom , thursdayTo , thursdayFrom ,fridayTo ,  fridayFrom , 
-        saturdayTo ,saturdayFrom ,  sundayTo ,  sundayFrom ,accountId) {
-            return database.execute(`CALL SET_AVAILABILITY("${mondayTo}","${mondayFrom}","${tuesdayTo}",
-            "${tuesdayFrom}","${wednesdayTo}","${wednesdayFrom}","${thursdayTo}","${thursdayFrom}",
-            "${fridayTo}","${fridayFrom}","${saturdayTo}","${saturdayFrom}","${sundayTo}",
-            "${sundayFrom}","${accountId}")`);
+    static setAvailability( mondayFrom,mondayTo ,tuesdayFrom,tuesdayTo , wednesdayFrom,
+        wednesdayTo , thursdayFrom , thursdayTo ,fridayFrom ,  fridayTo , 
+        saturdayFrom ,saturdayTo ,  sundayFrom ,  sundayTo ,accountId) {
+            return database.execute(`CALL SET_AVAILABILITY("${mondayFrom}","${mondayTo}","${tuesdayFrom}",
+            "${tuesdayTo}","${wednesdayFrom}","${wednesdayTo}","${thursdayFrom}","${thursdayTo}",
+            "${fridayFrom}","${fridayTo}","${saturdayFrom}","${saturdayTo}","${sundayFrom}",
+            "${sundayTo}","${accountId}")`);
         }
+
+    
+    static updateSetAvailability(mondayFrom,mondayTo ,tuesdayFrom,tuesdayTo , wednesdayFrom,
+        wednesdayTo , thursdayFrom , thursdayTo ,fridayFrom ,  fridayTo , 
+        saturdayFrom ,saturdayTo ,  sundayFrom ,  sundayTo ,accountId){
+            return database.execute(`CALL UPDATE_SETAVAILABILITY("${mondayFrom}","${mondayTo}","${tuesdayFrom}",
+            "${tuesdayTo}","${wednesdayFrom}","${wednesdayTo}","${thursdayFrom}","${thursdayTo}",
+            "${fridayFrom}","${fridayTo}","${saturdayFrom}","${saturdayTo}","${sundayFrom}",
+            "${sundayTo}","${accountId}")`);
+        }
+
+     static updateSignUp(id , name , image){
+         return database.execute(`CALL UPDATE_USER("${id}","${name}","${image}")`)
+     } 
 }
