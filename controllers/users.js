@@ -335,9 +335,10 @@ exports.updateSignUp = async(req , res, next)=>{
     const id = req.body.accountId;
     const name = req.body.name;
     const image = req.body.image;
+    const email = req.body.email;
     
-if(id , name , image){
-    User.updateSignUp(id , name , image)
+if(id , name , image , email){
+    User.updateSignUp(id , name , image , email)
     .then(result=>{
         res.json({
             status : "Success",

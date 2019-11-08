@@ -52,7 +52,7 @@ module.exports= class user {
             "${sundayTo}","${accountId}")`);
         }
 
-     static updateSignUp(id , name , image){
-         return database.execute(`CALL UPDATE_USER("${id}","${name}","${image}")`)
+     static updateSignUp(id , name , image , email){
+         return database.execute(`CALL UPDATE_USER("${id}","${name}","${image}","${email}")`)
      } 
 }

@@ -7,7 +7,7 @@ module.exports= class toDo {
         this.listId = listId;
         this.description = description;
         this.name = name;
-        this.image = image;
+        // this.image = image;
         this.createdAt = createdAt;
         this.dueDate = dueDate;
     }
@@ -15,7 +15,7 @@ module.exports= class toDo {
     createToDo() {
         return database.execute(`CALL CREATE_TODO("${this.id}",
         "${this.listId}", "${this.description}", "${this.name}", 
-        "${this.image}", "${this.createdAt}", "${this.dueDate}")`);
+         "${this.createdAt}", "${this.dueDate}")`);
     }
 
     static updateToDo(id, description, image, dueDate) {

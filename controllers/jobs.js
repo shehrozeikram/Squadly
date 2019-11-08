@@ -1,7 +1,8 @@
 const Job = require('../models/job');
-const uuid= require('uuid/v4');
+// const uuid= require('uuid/v4');
 
 exports.createJob= (req, res, next)=> {
+    console.log("create job ",req.body)
     var now = new Date();
     const dateTime = now.getFullYear() + '-' + (now.getMonth() + 1) +
      '-' + now.getDate() + ' ' + now.getHours()+":" + now.getMinutes() +
@@ -139,4 +140,70 @@ exports.updateJobStatus = (req , res , next)=>{
                 error : err
             })
         }
+}
+
+exports.clockOn = (req , res , next)=>{
+    console.log( "this is req body: ", (req.body));
+    
+
+    var jobId = req.body.clockInData.jobId
+    
+    var clockOn = JSON.parse(req.body.clockInData.clockOn)
+     clockOn = JSON.stringify(req.body.clockInData.clockOn)
+    var accountId = req.body.accountId
+
+    if(jobId , clockOn , accountId){
+        Job.clockOn(jobId , clockOn , accountId)
+        .then(result=>{
+            console.log( "this is req result: ", result);
+            res.json({
+                status : "Success",
+                res : result
+            })
+        })
+        .catch(err=>{
+            console.log( "this is req error: ", err);
+
+            res.json({
+                status : "There is a problem between setClock code", err
+            })
+        })
+    }else{
+        res.json({
+            status : "Failure"
+           
+        })
+    }
+}
+
+exports.clockOff = (req , res , next)=>{
+
+    var jobid = req.body.clockOff.jobId
+    var clockOff = JSON.parse(req.body.clockOff.clockOff)
+     clockOff = JSON.stringify(req.body.clockOff.clockOff)
+    var accountId = req.body.accountId
+
+    if(jobid , clockOff , accountId){
+        
+        Job.clockOff(jobid , clockOff , accountId)
+        .then(result=>{
+            console.log( "this is req result: ", result);
+            res.json({
+                status : "Success",
+                res : result
+            })
+        })
+        .catch(err=>{
+            console.log( "this is req error: ", err);
+
+            res.json({
+                status : "There is a problem between setClock code", err
+            })
+        })
+    }else{
+        res.json({
+            status : "Failure"
+           
+        })
+    }
 }

@@ -42,4 +42,13 @@ module.exports= class job {
     static updateJobStatus(id , status) {
         return database.execute(`CALL UPDATE_STATUS("${id}","${status}")`)
     }
+
+    static clockOn(jobId , clockOn , accountId ){
+        return database.execute(`CALL CLOCK_ON("${jobId}",'${clockOn}',"${accountId}")`)
+    }
+
+    static clockOff(jobid , clockOff , accountId ){
+        return database.execute(`CALL CLOCK_OFF("${jobid}",'${clockOff}',"${accountId}")`)
+    }
+
 }
